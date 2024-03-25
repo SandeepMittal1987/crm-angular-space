@@ -1,0 +1,30 @@
+<mat-toolbar color="primary" fxFlexFill>
+  <mat-toolbar-row fxLayoutAlign="space-between center" style="padding-left: 0px; padding-right: 0px;">
+    <div style="padding-left: 0px !important; padding-right: 0px !important;">
+      <button mat-button (click)="onMenuClick($event)"
+        style="padding-left: 0px !important; padding-right: 0px !important; min-width: 55px;">
+        <mat-icon>{{lib.menu}}
+        </mat-icon>
+      </button>
+      <a mat-button
+        *ngIf="!lib.isHideLogoWithExpandAndCollapseMenu || (lib.isExpandMenu && lib.isHideLogoWithExpandAndCollapseMenu)"
+        style="padding-left: 0px !important;">
+      <img src="{{lib.logoUrl}}"></a>
+      <span class="header-spacer">{{lib.appTitle | translate | uppercase}} {{lib.titleSeparator | translate}} {{(lib.pageName | translate) | uppercase}} </span>
+
+    </div>
+    <div>
+      <button mat-button [mat-menu-trigger-for]="menuLanguage" *ngIf="!lib.isHideLanguageOption">
+        <span class="header-spacer">{{lib.currentLanguage}}</span>
+        <mat-icon>language</mat-icon>
+      </button>
+      <mat-menu #menuLanguage="matMenu" xPosition="after">
+        <button mat-menu-item (click)="onLanguageSelect(lang)" *ngFor="let lang of lib.languages">{{lang}}</button>
+      </mat-menu>
+      <button mat-button (click)="onLogoutClick($event)">
+        <span style="margin-right: 5px;">{{lib.userName}}</span>
+        <mat-icon class="example-spacer">power_setting_new</mat-icon>
+      </button>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>

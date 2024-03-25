@@ -1,0 +1,39 @@
+<div class="home-centre">
+  <div class="logo">
+    <div class="logo-image"><lib-image [lib]="lib.sidelogo"></lib-image></div>
+    <div class="user-logo">
+      <lib-image class="user-symbol" [lib]="lib.userSymbol"></lib-image>
+      <lib-static-label [lib]="lib.loginText"></lib-static-label>
+    </div>
+    <div class="user-About">
+      <lib-image class="about-us" [lib]="lib.aboutSymbol"></lib-image>
+      <lib-static-label [lib]="lib.aboutusText"></lib-static-label>
+    </div>
+  </div>
+  <div class="info">
+    <div>
+    <div>
+      <lib-static-label [lib]="lib.welcomeNote"></lib-static-label>
+    </div>
+      <div class="company-info">
+        <lib-static-label [lib]="lib.info"></lib-static-label>
+    </div>
+  </div>
+    <div class="social-info">
+      <lib-image class="social-insta" [lib]="lib.instaSymbol"></lib-image>
+      <lib-image class="social-facebook" [lib]="lib.facebookSymbol"></lib-image>
+      <lib-image class="social-youtube" [lib]="lib.youtubeSymbol"></lib-image>
+      <lib-image class="social-x_logo" [lib]="lib.xSymbol"></lib-image>
+      <lib-image class="social-linkedIn" [lib]="lib.linkedinSymbol"></lib-image>
+    </div>
+  </div>
+  <div class="login-details">
+    <lib-static-label [lib]="lib.loginHeading"></lib-static-label>
+    <lib-static-label [lib]="lib.loginMessage"></lib-static-label>
+    <lib-input-box class="userId" [lib]="lib.userId"></lib-input-box>
+    <lib-extend-input-control class="password" [lib]="lib.password" (customSuffixClick)="forgotPwdPopup($event)"></lib-extend-input-control>
+    <lib-checkbox class="remember-me" [lib]="lib.rememberMe"></lib-checkbox>
+    <lib-button class="login-cta" [lib]="lib.loginCTA" (triggerClick) = "loginPageClick($event)"></lib-button>
+  </div>
+
+</div>

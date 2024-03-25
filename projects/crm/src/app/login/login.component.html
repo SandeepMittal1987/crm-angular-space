@@ -1,0 +1,15 @@
+<main>
+  <div class="main-page">
+    <div class="topnav">
+      <div class="Header row">
+        <div class="col-6 header-support">
+          <lib-image [lib]="crm.openEmail"></lib-image>
+          <lib-static-label [lib]="crm.supportEmail"></lib-static-label>
+          <lib-image class="call" [lib]="crm.supportCall"></lib-image>
+          <lib-static-label [lib]="crm.supportMobile"></lib-static-label>
+        </div>
+      </div>
+    </div>
+    <lib-login-page [lib]="crm" (forgotPopup)="forgotPopup()" (loginClick)="loginClick()"></lib-login-page>
+  </div>
+</main>

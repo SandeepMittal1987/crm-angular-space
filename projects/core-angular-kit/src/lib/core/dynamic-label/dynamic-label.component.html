@@ -1,0 +1,2 @@
+<label [ngClass]="lib.cssClass" *ngIf="!lib.isInnerHtml" [id]="lib.controlId">{{lib.label | translate : lib.dynamicData}}</label>
+<label [ngClass]="lib.cssClass" [id]="lib.controlId" [innerHTML]="lib.label | translate : lib.dynamicData" *ngIf="lib.isInnerHtml"></label>

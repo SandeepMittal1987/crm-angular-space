@@ -1,0 +1,11 @@
+<div class="matCheckbox">
+  <mat-checkbox [id]="lib.controlId" [name]="lib.label" [color]="lib.color" [value]="lib.value" [checked]="lib.isChecked"
+    [ngClass]="lib.cssClass" (change)="onChange($event)" [hidden]="lib.isHide" *ngIf="!lib.isInnerHtml"
+    [disabled]="lib.isDisabled">{{lib.label | translate}}
+  </mat-checkbox>
+  <mat-checkbox *ngIf="lib.isInnerHtml" [id]="lib.controlId" [color]="lib.color" [name]="lib.label" [value]="lib.value"
+    [checked]="lib.isChecked" [ngClass]="lib.cssClass" (change)="onChange($event)" [hidden]="lib.isHide"
+    [disabled]="lib.isDisabled">
+  <span [innerHTML]="lib.label"></span>
+  </mat-checkbox>
+</div>

@@ -1,0 +1,9 @@
+<div [ngClass]="lib.cssClass" [hidden]="lib.isHide">
+  <mat-form-field appearance="outline" hideRequiredMarker="true" [ngClass]="{'has-error': lib.tooltipMsg || lib.isGroupErrorMsg}">
+    <mat-label>{{lib.label | translate}}</mat-label>
+    <input matInput [name]="lib.value" [(ngModel)]="lib.value" (blur)="doValidation()" (focus)="onFocus($event)" (keyup)="doValidationOnKeyup()" [id]="lib.controlId" [disabled]="lib.isDisable" [maxLength]="lib.maxLength" [required]="lib.isMandatory" autocomplete="off" (input)="restrictInvalidCharInput($event)" (paste)="onCopyPaste($event)">
+    <mat-hint *ngIf="lib.tooltipMsg">{{lib.tooltipMsg | translate}}</mat-hint>
+
+  </mat-form-field>
+
+</div>

@@ -1,0 +1,13 @@
+<div class="custom__drp--wrapper" [hidden]="lib.isHide">
+  <mat-form-field appearance="{{lib.appearance}}" hideRequiredMarker="lib.hideRequiredMarker"
+    [ngClass]="{'has-error': lib.tooltipMsg}">
+    <mat-label class="drop__label">{{lib.label | translate}}</mat-label>
+    <mat-select disableOptionCentering matInput [name]="lib.value" [(ngModel)]="lib.value" [required]="lib.isMandatory"
+      panelClass="matSelect-dd sortByList" class="matSelect" [(value)]="lib.value" (valueChange)="selectItem()"
+      [disabled]="lib.isDisable" (blur)="validateData()">
+      <mat-option *ngFor="let item of lib.dropdownListItems" [value]="item.code">{{item.value | translate}}</mat-option>
+    </mat-select>
+    <!-- <img class="selectDropDownImage" [src]="lib.imageSrc" /> -->
+    <mat-hint *ngIf="lib.tooltipMsg">{{lib.tooltipMsg | translate}}</mat-hint>
+  </mat-form-field>
+</div>

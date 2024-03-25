@@ -1,0 +1,7 @@
+<img [id]="lib.controlId" *ngIf="lib && !lib.backgroundImg" [src]="lib.src | translate" [alt]="lib.alt | translate"
+  [ngClass]="lib.cssClass" (click)="onClick()">
+
+<div *ngIf="lib && lib.src && lib.backgroundImg" class="backgroundImageCss"
+  [ngStyle]="{'background-image': 'url(' + lib.src + ')'}">
+  <ng-content></ng-content>
+</div>

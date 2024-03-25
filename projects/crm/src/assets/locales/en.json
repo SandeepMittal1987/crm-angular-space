@@ -1,0 +1,56 @@
+{
+    "LABELS":{
+        "SEARCH" : "Search",
+        "SUPPORTEMAIL": "help@skydecor.com",
+        "SUPPORTEMOBILE": "+91-65431686513",
+        "LOGIN": "LOGIN",
+        "ABOUTUS": "ABOUT US",
+        "WELCOMENOTE": "Welcome To <span class='company-name'>SKYDECOR</span>",
+        "COMPANYINFO": "First Manufacturer of PVC laminates in India",
+        "LOGINHEADING": "Login",
+        "LOGINTEXT": "Please login to your account.",
+        "USERID": "Email/Mobile Number",
+        "PASSWORD": "Password",
+        "FORGOTPASSWORD": "Forgot Password?",
+        "FORGOTPASSWORDPOPUP":"FORGOT PASSWORD",
+        "FORGOTHINT":"No worries! Your new password is just few clicks away.",
+        "REMEMBERME": "Remember Me!",
+        "NEXT": "Next",
+        "OTPEMAILBACKBTN": "Tap here to go back to edit the <br /><span class='otp-back-device'>\"Email id\"</span>",
+        "OTPMOBILEBACKBTN": "Tap here to go back to edit the <br /><span class='otp-back-device'>\"Mobile Number\"</span>",
+        "RESENDLINK": "Resend OTP",
+        "RESEND": "Resend",
+        "OTPTITLE": "OTP",
+        "OTPHINT_FormatText": "We have send you an OTP on <span>{{email_mobile}}.</span> Please enter it.",
+        "RESENDTEXT": "Haven't Received OTP?",
+        "RESETTITLE": "Reset Password",
+        "RESETHINT": "Let's create new password for your account.",
+        "NEWPASSWORD": "New Password",
+        "CONFIRMPASSWORD": "Repeat Password",
+        "ENTERPASSWORD": "Enter Your Password",
+        "ENTERPASSWORDAGAIN": "Enter the password again",
+        "RESETPASSWORD": "Reset Password",
+        "USERIDEMPTYERROR": "Please enter valid Email/Mobile",
+        "PWDEMPTYERROR": "Please enter valid Password",
+        "NEWPASSWORDERROR": "Please enter valid new password",
+        "CONFIRMPASSWORDERROR": "Please enter valid confirm password",
+        "OTPERROR":"Incorrect OTP. Please check again.",
+        "MESSAGE": {
+            "SUCCESS" :{
+                "LOGINSUCCESS": "you have been successfully logged in!",
+                "OTPSENT": "OTP sent successfully.",
+                "OTPVERIFIED": "OTP verified successfully! Please enter new password",
+                "PASSWORDRESET": "Password has been reset successfully",
+                "FALLBACK": "Action completed successfully."
+            },
+            "ERROR": {
+                "<code>": "<MSG>",
+                "FALLBACK": "Something went wrong. Please try login again."
+            },
+            "WARNING": {
+                "<code>": "<MSG>",
+                "FALLBACK": "Something went wrong. Please try login again."
+            }
+        }
+    }
+}

@@ -1,0 +1,9 @@
+<a fxLayoutAlign="center center" style="cursor: pointer !important;" *ngIf="!lib.isHide" (click)="onClick($event)">
+<mat-icon *ngIf="lib.matIcon" [ngClass]="lib.matIconClass" matTooltip="{{lib.toolTipText | translate}}" [matTooltipPosition]="'above'" style="cursor: pointer !important;">{{lib.matIcon}}&nbsp;</mat-icon>{{lib.title | translate}}
+</a>
+
+<!-- <a href="javascript:void(0)" *ngIf="!lib.isContent" [id] = "lib.controlId" [ngClass]="[lib.cssClass, 'linkClass']" (click)="handleClick($event)"><span *ngIf="lib.value">{{lib.value | translate}}</span><span>{{lib.label | translate}}</span></a>
+
+<a href="javascript:void(0)" *ngIf="lib.isContent" [id]="lib.controlId" [ngClass]="[lib.cssClass, 'linkClass']" (click)="handleClick($event)">
+  <ng-content></ng-content>
+</a> -->

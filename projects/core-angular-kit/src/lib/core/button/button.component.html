@@ -1,0 +1,2 @@
+<button mat-raised-button [ngClass]="lib.customCssClass" [disabled]="lib.isDisable" *ngIf="!lib.isHide"
+    (click)="onClick($event)"><mat-icon *ngIf="lib.matIcon">{{lib.matIcon}} &nbsp;</mat-icon> {{lib.title | translate}}</button>

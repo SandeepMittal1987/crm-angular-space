@@ -1,0 +1,3 @@
+<label [ngClass]='lib.cssClass' [id]="lib.controlId" translate-default="" *ngIf="lib?.label">{{lib.label | translate}}</label>
+<label [ngClass]='lib.cssClass' [id]="lib.controlId" [innerHTML]="lib.innerHtml | translate" *ngIf="lib?.innerHtml && !lib?.isSafeHtml"></label>
+<label [ngClass]='lib.cssClass' [id]="lib.controlId" [innerHTML]="lib.innerHtml" *ngIf="lib?.isSafeHtml"></label>

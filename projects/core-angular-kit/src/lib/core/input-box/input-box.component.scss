@@ -1,0 +1,15 @@
+mat-form-field{
+    mat-hint{
+        color: #c62828;
+    }
+    &.has-error{
+        ::ng-deep{
+            .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline .mdc-notched-outline__leading, .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline .mdc-notched-outline__notch, .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline .mdc-notched-outline__trailing{
+                border-color: #c62828;
+            }
+            .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-floating-label, .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-floating-label--float-above {
+                color: #c62828;
+            }
+        }
+    }
+}

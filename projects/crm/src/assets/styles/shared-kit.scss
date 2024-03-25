@@ -1,0 +1,407 @@
+@import './color.scss';
+@import './font.scss';
+::ng-deep{
+    main{
+        height: 100%;
+    }
+.topnav{
+    background-color: $color-primary-blue-OP29;
+    padding: 15px 25px;
+    height: 7%;
+    .Header{
+        display: flex;
+        .call{
+            padding-left: 15px;
+        }
+        .header-changes{
+            justify-content: flex-end;
+            display: flex;
+        }
+        .language{
+            background-color: transparent;
+        }
+    }
+    span {
+        color: $color-primary-white-OP66;
+        .fa-phone{
+            padding-left: 15px;
+        }
+    }
+    ::ng-deep{
+        .email,.mobile{
+            padding-left: 10px;
+            color: $color-primary-white-OP88;
+        }
+        
+    } 
+    ::ng-deep{
+        .custom__drp--wrapper{
+            width: calc(100% - 50%);
+        }
+        .mat-mdc-form-field-subscript-wrapper{
+            display: none;
+        }
+        .mat-mdc-form-field{
+            background-color: transparent;
+        }
+        .mat-mdc-form-field-flex{
+            height: 25px;
+        }
+        .mat-mdc-form-field-infix{
+            padding: 0;
+        }
+        .mat-form-field-appearance-fill .mat-mdc-select-arrow-wrapper{
+            transform: translateY(0px);
+            -webkit-transform: translateY(0px);
+            -moz-transform: translateY(0px);
+            -ms-transform: translateY(0px);
+            -o-transform: translateY(0px);
+        }
+        .mdc-text-field--filled:not(.mdc-text-field--disabled){
+            background-color: transparent;
+        }
+    }
+}
+.main-page{
+    height: 100%;
+    .home-centre{
+        display: flex;
+        height: 100%;
+        background-color: $color-primary-white-OP60;
+        align-items: flex-end;
+        height: 93%;
+
+        .logo{
+            background-color: $color-primary-white-OP66;
+            height: 85%;
+            width: 10%;
+            opacity: 1;
+            padding-top: 3%;
+            border: 0.5px solid lightgrey;
+            .logo-image{
+                display: flex;
+                justify-content: center;
+                width: 100%;
+            }
+            .user-logo, .user-About{
+                padding-top: 30%;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                opacity: 0.5;
+                .user-symbol, .about-us{
+                    font-size: $font-xl_20;
+                }
+                lib-static-label{
+                    font-size: $font-lg;
+                }
+            }
+            
+        }
+        .info{
+            background-color: $color-primary-blue-OP28;
+            padding: 0px;
+            height: 93%;
+            display: flex;
+            width: 50%;
+            box-shadow: 0 4px 8px 0 rgba(0, 1, 0.8, 0.2), 0 6px 20px 0 rgba(0, 1, 0.19);
+            flex-direction: column;
+            justify-content: space-evenly;
+            padding: 0 2%;
+            .welcome-note{
+                color: $color-primary-white-OP66;
+                font-size: $font-xl_34;
+                .company-name{
+                    font-size: $font-xl_50;    
+                }
+            }
+            .company-info{
+                color: $color-primary-white-OP62;
+                padding-top: 2%;
+                font-size: $font-xl_18;
+                width: 70%;
+            }
+            .social-info {
+                padding-top: 100px;
+                lib-image:not(:last-child){
+                    padding-right: 15px;
+                }
+            }
+        }
+        .login-details{
+            background-color: $color-primary-white-OP66;
+            padding: 0px;
+            height: 85%;
+            display: flex;
+            width: 40%;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 5%;
+            .login-heading{
+                color:$color-primary-blue-OP28;
+                font-size: $font-xl_45;
+                font-weight: $font-weight-700;
+            }
+            .login-message{
+                color: $color-primary-white-OP86;
+                padding-top: 4%;
+                font-size: $font-xl_26;
+            }
+            .userId{
+                padding-top: 3%;
+                .mat-mdc-form-field{
+                    width: 100%;
+                }
+            }
+            .password{
+                mat-form-field{
+                    width: 100%;
+                }
+                .password-suffix{
+                    padding-right: 10px;
+                    color: $color-primary-blue-OP66;
+                    cursor: pointer;
+                    text-decoration: underline;
+                }
+            }
+            .remember-me{
+                .mdc-checkbox .mdc-checkbox__native-control:focus~.mdc-checkbox__ripple {
+                    opacity: unset;
+                    background-color: transparent;
+                }
+            }
+
+            .login-cta{
+                display: flex;
+                justify-content: center;
+                button{
+                    color: $color-primary-white-OP66;
+                    background-color: $color-primary-blue-OP28;
+                    width: 80%;
+                }
+            }
+        }
+    }
+
+}
+
+.cdk-overlay-pane.forgotPasswordOverlay{
+    font-family: $OpenSans;
+    .forgot-password{
+        width: 800px;
+        height: 500px;
+        display: flex;
+        .left-side{
+            width: 40%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            background-color: $color-primary-blue-OP20;
+            margin-right: 10px;
+            .company-logo{
+                height: 100px;
+            }
+            .password-lock{
+                height: 200px;
+            }
+
+        }
+        .right-side{
+            width: 60%;
+            padding: 15px;
+            .cross-btn{
+                display: flex;
+                justify-content: space-between;
+                padding: 0;
+                height: $font-xl_36;
+                cursor: pointer;
+                .backbutton{
+                    display: flex;
+                    align-items: center;
+                    font-size: $font-xxl;
+                    ::ng-deep{
+                        .back-text{
+                            font-size: $font-xxl;
+                            .otp-back-device{
+                                color: $color-primary-blue-OP66;
+                            }
+                        }
+                    }
+                }
+                &.close-btn{
+                    justify-content: flex-end;
+                }
+            }
+            .formTexts{
+                display: flex;
+                flex-direction: column;
+                .forgot-CSS{
+                    color: $color-primary-black-OP60;
+                    font-size: $font-xl_30;
+                    font-weight: $font-weight-700;
+                    padding-top: 15px;
+                }
+                .forgot-hint{
+                    color: $color-primary-grey-OP60;
+                    font-size: $font-xl_24;
+                    font-weight: $font-weight-700;
+                    padding-top: 15px;
+                }
+                .forgot-emailTitle{
+                    color: $color-primary-black-OP60;
+                    font-size: $font-xxl;
+                    padding-top: 25px;
+                }
+            }
+            .form-controls{
+                padding-top: 10px;
+                width: 80%;
+                .userId{
+                    mat-form-field{
+                        width: 100%;
+                    }
+                }
+                .next{
+                    display: flex;
+                    justify-content: center;
+                    padding-top: 15px;
+                }
+                .forgot-next{
+                    color: $color-primary-white-OP66;
+                    background-color: $color-primary-blue-OP26;
+                    width: 80%;
+                }
+            }
+
+            .otp-details{
+                padding: 35px 0;
+
+                .otp-texts{
+                    display: flex;
+                    flex-direction: column;
+                    .otp-title{
+                        color: $color-primary-black-OP60;
+                        font-size: $font-xl_60;
+                        font-weight: $font-weight-700;
+                    }
+                    .otp-hints{
+                    ::ng-deep{
+                    .otp-hint{
+                        padding: 25px 10px 25px 0px;
+                        font-size: $font-xl_18;
+                         span{
+                                color: $color-primary-blue-OP26;
+                            }
+                        }
+                    }
+                    }
+                }
+                .otp-number{
+                    ::ng-deep{
+                        .ng-otp-input-wrapper .otp-input:not(:last-child){
+                            margin-right: 20px;
+                        }
+                        .otp-input{
+                            height: 60px;
+                            width: 50px;
+                        }
+
+                        .otp-input.otp-error{
+                            border: 1px solid $color-primary-red-OP20;
+                        }
+                    }
+                    .otp-Error{
+                        color: $color-primary-red-OP22;
+                        font-size: $font-xl_18;
+                        label{
+                            padding-top: 15px;
+                        }
+                    }
+                }
+                .otp-numbr-text{
+                    .otp-next-btn{
+                        padding-top: 50px;
+                        display: flex;
+                        justify-content: center;
+                        .otp-next{
+                            width: 80%;
+                            button{
+                                color: $color-primary-white-OP66;
+                                background-color: $color-primary-blue-OP66;
+                                width: 80%;
+                            }
+                        }
+                    }
+                }
+                .otp-resend{
+                    padding-top: 20px;
+                    display: flex;
+                    .resend-link{
+                        padding-left: 10px;
+                        font-weight: $font-weight;
+                    }
+                }
+            }
+
+            .new-password{
+                .reset-texts{
+                    display: flex;
+                    flex-direction: column;
+                    .reset-title{
+                        font-size: $font-xl_44;
+                        color: $color-primary-black-OP60;
+                        font-weight: $font-weight-extraBold;
+                        padding-top: 20px;
+                        font-family: $Taro;
+                    }
+                    .reset-hints{
+                        color: $color-primary-grey-OP62;
+                        font-size: $font-xl_18;
+                        font-family: $Taro;
+                        padding-top: 15px;
+                    }
+                }
+                .reset-inputs{
+                    padding-top: 25px;
+                    width: 80%;
+                    display:flex;
+                    flex-direction: column;
+                    .new-pwd, .reset-pwd{
+                        padding-top: 5px;
+                        mat-form-field{
+                            width: 100%;
+                        }
+                    }
+                    .reset-btn-pwd{
+                        display: flex;
+                        justify-content: center;
+                        button{
+                            width: 80%;
+                            background-color: $color-primary-blue-OP66;
+                            color: $color-primary-white-OP66;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.cdk-overlay-container .cdk-overlay-pane{
+::ng-deep{
+    .app-ui-message-container{
+        margin-top: 70px;
+        color: $app-ui-message-container-text-color;
+        &.error .mdc-snackbar__surface{
+            background-color: $app-ui-message-container-error-background-color !important;
+        }
+        &.success .mdc-snackbar__surface{
+            background-color: $app-ui-message-container-success-background-color !important;
+        }
+        &.warning .mdc-snackbar__surface{
+            background-color: $app-ui-message-container-warning-background-color !important;
+        }
+    }
+}
+}
+}

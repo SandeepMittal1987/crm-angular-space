@@ -1,0 +1,22 @@
+<div [ngClass]="lib.cssClass" [hidden]="lib.isHide">
+  <span [ngClass]="{'has-prefix': lib.prefix}">
+    <div class="extend-prefix" [ngClass]="[lib.prefix.length === 2 ? 'ip-prefix-len-2': '', lib.prefix.length === 3 ? 'ip-prefix-len-3': '', lib.prefix.length === 4 ? 'ip-prefix-len-4': '', lib.prefix.length === 5 ? 'ip-prefix-len-5': '', lib.prefix.length >= 6 ? 'ip-prefix-morethan-5': '']">
+      <mat-form-field appearance="outline" hideRequiredMarker="lib.hideRequiredMarker" [ngClass]="{'has-error': (lib.tooltipMsg || lib.isGroupErrorMsg) && !lib.isHintEnabled}">
+        <mat-label *ngIf="lib.label">{{lib.label | translate}} {{lib.optionalText}}</mat-label>
+        <span matPrefix *ngIf="lib.prefix" [ngClass]="lib.prefixClass">
+          {{lib.isPrefixViewEnabled ? lib.prefix :''}} &nbsp;
+        </span>
+        <input matInput [name]="lib.value" (mobileNumberData)="doValidation()" [(ngModel)]="lib.value" (blur)="doValidation()" [id]="lib.controlId" [disabled]="lib.isDisable" [maxlength]="lib.maxLength" [required]="lib.isMandatory" [autocomplete]="lib.autocomplete" [readonly]="lib.readonly" (keyup)="doValidationOnKeyup()"
+        (paste)="onCopyPaste($event)" (input)="restrictInvalidCharInput($event)" [placeholder]="lib.placeholder |translate" [type]="lib.type">
+        <span matSuffix class="suffix-code" *ngIf="lib.suffixLabel" [ngClass]="lib.suffixClass">
+          {{lib.suffixLabel | translate}}
+        </span>
+        <a matSuffix class="suffix-link" *ngIf="lib.suffixLink" [ngClass]="lib.suffixlinkClass" (click) ="suffixClick($event)">
+          {{lib.suffixLink | translate}}
+        </a>
+        <img matSuffix *ngIf="lib.suffix" class="selectDropDownImage" [src]="lib.suffix">
+        <mat-hint *ngIf="lib.tooltipMsg && !lib.isHintEnabled">{{lib.tooltipMsg | translate}}</mat-hint>
+      </mat-form-field>
+    </div>
+  </span>
+</div>
