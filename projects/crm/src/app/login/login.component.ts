@@ -25,6 +25,7 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    sessionStorage.clear();
     this.crm = new LoginModel();
     this.declareLanguage();
   }
@@ -106,7 +107,6 @@ export class LoginComponent implements OnInit {
     modalInstance.componentInstance.otpNxtClick.subscribe((ev) => {
       if(modalInstance.componentInstance.lib.otp){
         this.uiMessage.close();
-        ev.preventDefault();
         if(new String(modalInstance.componentInstance.lib.otp).length==6){
           modalInstance.componentInstance.lib.otpConfig.inputClass='';
           modalInstance.componentInstance.lib.optError = new StaticLabelControl('',"");
@@ -119,14 +119,12 @@ export class LoginComponent implements OnInit {
           }))
           .subscribe({
             next: (validate) => {
-              ev.preventDefault();
               modalInstance.componentInstance.lib = this.crm.resetPassword(
                 modalInstance.componentInstance.lib
               );
               this.uiMessage.success('OTPVERIFIED');
             },
             error: (e) => {
-              ev.preventDefault();
               this.uiMessage.error(e,false);
               console.log('OTP API error', e);
             },
@@ -137,6 +135,7 @@ export class LoginComponent implements OnInit {
         }
       } 
     });
+
 
     modalInstance.componentInstance.otpBack.subscribe((e)=>{
       this.uiMessage.close();

@@ -41,8 +41,10 @@ intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> 
     }),
     catchError(error=>{
       if(error && error.error && error.error.message){
-        sessionStorage.clear();
-        window.location.href = this.appConfigService.LOGIN_URL;
+        if(error.url.indexOf("otpValidate")==-1){
+          sessionStorage.clear();
+          window.location.href = this.appConfigService.LOGIN_URL;
+        }
         this.uiMessage.error(error.error.message, false);
       } else {
         throw Error(error.message);

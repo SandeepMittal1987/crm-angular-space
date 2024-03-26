@@ -37,7 +37,6 @@ private initAppConfig(appConfig: any):void{
   // if(appConfig.mock === true){
   //   this.URLS = appConfig.mockUrls;
   // }
-  // this.setAuthTokenAndUser();
   // this.restrictUnAuthorizedLogin();
 }
   setAuthTokenAndUser(token): void {
@@ -55,16 +54,16 @@ private initAppConfig(appConfig: any):void{
       tokenAndUser.token = urlParams.token;
       tokenAndUser.username = urlParams.empId;
     }
-    else if(sessionStorage.getItem('token') && sessionStorage.getItem('empId')){
+    else if(sessionStorage.getItem('token') && sessionStorage.getItem('username')){
       tokenAndUser.token = sessionStorage.getItem('token');
-      tokenAndUser.username = sessionStorage.getItem('empId');
+      tokenAndUser.username = sessionStorage.getItem('username');
     }
 
     return tokenAndUser;
   }
 
   get isLoggedIn(): boolean {
-    const user = localStorage.getItem('token');
+    const user = localStorage.getItem('username');
     return user ? true : false;
   }
 
