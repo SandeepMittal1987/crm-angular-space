@@ -51,3 +51,4 @@ export * from './lib/widgets/login.model';
 // export * from './lib/widgets/password-model';
 
 export * from './lib/models/model/image-data-model';
+export * from './lib/models/model/login-model';
