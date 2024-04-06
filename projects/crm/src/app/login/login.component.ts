@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Button, ImageControl, InputControl, LoginModel, PopupService, StaticLabelControl } from 'core-angular-kit';
+import { Button, ImageControl, InputControl, LoginModel, LoginModelClass, PopupService, StaticLabelControl } from 'core-angular-kit';
 import { ConfigService } from '../core/services/util-service.service';
 import { ApiService } from '../core/services/api-service/api.service';
 import { AppConfigService } from '../core/services/app-config.service';
@@ -7,6 +7,7 @@ import { UiMessageService } from '../core/services/ui-message-service/ui-message
 import { Router } from '@angular/router';
 import { ForgotPassword, ForgotPasswordComponent } from '../../../../core-angular-kit/src/public-api';
 import { catchError } from 'rxjs/operators';
+import { ApisService } from '../core/api/apis.service';
 
 @Component({
   selector: 'crm-login',
@@ -21,7 +22,8 @@ export class LoginComponent implements OnInit {
     private apiService: ApiService,
     private appConfigService: AppConfigService,
     private uiMessage: UiMessageService,
-    private router: Router
+    private router: Router,
+    private appService: ApisService
   ) { }
 
   ngOnInit() {
@@ -52,9 +54,9 @@ export class LoginComponent implements OnInit {
         this.crm.password.tooltipMsg = 'LABELS.PWDEMPTYERROR';
       }
     } else {
-      const url = this.appConfigService.URLS.emailLogin.toString();
+      // const url = this.appConfigService.URLS.emailLogin.toString();
       const params = this.getParams();
-      this.apiService.POST(url, params).subscribe((validate) => {
+      this.appService.login(params).subscribe((validate: LoginModelClass) => {
         this.appConfigService.setAuthTokenAndUser(validate.token);
         this.uiMessage.success('LOGINSUCCESS');
         this.router.navigateByUrl('/dashboard')
@@ -81,10 +83,9 @@ export class LoginComponent implements OnInit {
       }
       if(forgotInput && !isInValidForgotInput){
         modalInstance.componentInstance.lib.emailInput.tooltipMsg ='';
-        let url = this.appConfigService.URLS.forgotPassword.toString();
-        url= url.replace('{email}',forgotInput);
-        this.apiService
-          .GET(url)
+        // let url = this.appConfigService.URLS.forgotPassword.toString();
+        // url= url.replace('{email}',forgotInput);
+        this.appService.forgotPassword(forgotInput)
           .pipe(catchError((err) => {
             console.log(err);
             return err;
@@ -110,9 +111,9 @@ export class LoginComponent implements OnInit {
         if(new String(modalInstance.componentInstance.lib.otp).length==6){
           modalInstance.componentInstance.lib.otpConfig.inputClass='';
           modalInstance.componentInstance.lib.optError = new StaticLabelControl('',"");
-          const url = this.appConfigService.URLS.otpValidate.toString();
+          // const url = this.appConfigService.URLS.otpValidate.toString();
           const params = this.otpGetParams(modalInstance.componentInstance.lib);
-          this.apiService.POST(url, params)
+          this.appService.otpValidate(params)
           .pipe(catchError((err) => {
             console.log(err);
             return err;
@@ -156,9 +157,9 @@ export class LoginComponent implements OnInit {
         modalInstance.componentInstance.lib.resetPwd.tooltipMsg = "LABELS.CONFIRMPASSWORDERROR";
       }
       if(!isInvalidReset){
-        const url = this.appConfigService.URLS.otpValidate.toString();
+        // const url = this.appConfigService.URLS.otpValidate.toString();
         const params = this.changePwdParams(modalInstance.componentInstance.lib);
-        this.apiService.POST(url, params).subscribe((validate) => {
+        this.appService.changePassword(params).subscribe((validate) => {
           modalInstance.close();
           this.uiMessage.success('PASSWORDRESET');
         });
@@ -167,10 +168,9 @@ export class LoginComponent implements OnInit {
 
     modalInstance.componentInstance.resendClick.subscribe((e) => {
       this.uiMessage.close();
-    let url = this.appConfigService.URLS.forgotPassword.toString();
-        url= url.replace('{email}',modalInstance.componentInstance.lib.emailInput.value);
-        this.apiService
-          .GET(url)
+    // let url = this.appConfigService.URLS.forgotPassword.toString();
+        // url= url.replace('{email}',modalInstance.componentInstance.lib.emailInput.value);
+        this.appService.forgotPassword(modalInstance.componentInstance.lib.emailInput.value)
           .pipe(catchError((err) => {
             console.log(err);
             return err;
