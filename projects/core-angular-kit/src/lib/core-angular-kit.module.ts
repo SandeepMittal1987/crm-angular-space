@@ -25,9 +25,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatInputModule } from '@angular/material/input';
 import { NgOtpInputModule } from 'ng-otp-input';
-
 import { ButtonComponent } from './core/button/button.component';
-import { HeaderComponent } from './models/widgets/header/header.component';
 import { ExtendInputControlComponent } from './core/extend-input-control/extend-input-control.component';
 import { InputBoxComponent } from './core/input-box/input-box.component';
 import { StaticLabelComponent } from './core/static-label/static-label.component';
@@ -36,13 +34,13 @@ import { ImageComponent } from './core/image/image.component';
 import { CheckboxComponent } from './core/checkbox/checkbox.component';
 import { DynamicLabelComponent } from './core/dynamic-label/dynamic-label.component';
 import { LinkComponent } from './core/link/link.component';
-import { ForgotPasswordComponent, LoginPageComponent } from '../public-api';
+import { ForgotPasswordComponent, LoginPageComponent, HeaderComponent } from '../public-api';
+import { LayoutPageComponent } from './models/pages/layout-page/layout-page.component';
 
 @NgModule({
   declarations: [
     CoreAngularKitComponent,
     ButtonComponent,
-    HeaderComponent,
     ExtendInputControlComponent,
     InputBoxComponent,
     StaticLabelComponent,
@@ -50,7 +48,7 @@ import { ForgotPasswordComponent, LoginPageComponent } from '../public-api';
     ImageComponent,
     CheckboxComponent,
     DynamicLabelComponent,
-    LinkComponent,HeaderComponent, ForgotPasswordComponent, LoginPageComponent
+    LinkComponent,HeaderComponent, ForgotPasswordComponent, LoginPageComponent, LayoutPageComponent
 
   ],
   imports: [
@@ -84,7 +82,6 @@ import { ForgotPasswordComponent, LoginPageComponent } from '../public-api';
   exports: [
     CoreAngularKitComponent,
     ButtonComponent,
-    HeaderComponent,
     ExtendInputControlComponent,
     InputBoxComponent,
     StaticLabelComponent,
@@ -92,7 +89,7 @@ import { ForgotPasswordComponent, LoginPageComponent } from '../public-api';
     ImageComponent,
     CheckboxComponent,
     DynamicLabelComponent,
-    LinkComponent, HeaderComponent, ForgotPasswordComponent, LoginPageComponent
+    LinkComponent, HeaderComponent, ForgotPasswordComponent, LoginPageComponent, LayoutPageComponent
   ]
 })
 export class CoreAngularKitModule { }

@@ -24,17 +24,17 @@ export class AuthServiceService implements CanActivate {
     if (this.authMetadata.isCached) {
       return of(this.authMetadata);
     }
-    const url = this.appConfig?.URLS?.privilege?.toString();
+    // const url = this.appConfig?.URLS?.privilege?.toString();
 
-    return this.apiService.GET(url).pipe(
-      map((value) => {
-        this.authMetadata.roles = {
-          screens: value['SCREENS'] ? value['SCREENS'] : {},
-        };
-        this.authMetadata.isCached = true;
-        return this.authMetadata;
-      })
-    );
+    // return this.apiService.GET(url).pipe(
+    //   map((value) => {
+    //     this.authMetadata.roles = {
+    //       screens: value['SCREENS'] ? value['SCREENS'] : {},
+    //     };
+    //     this.authMetadata.isCached = true;
+    //     return this.authMetadata;
+    //   })
+    // );
   }
 
   canActivate(
