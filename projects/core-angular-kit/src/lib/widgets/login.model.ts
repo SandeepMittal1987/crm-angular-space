@@ -1,4 +1,3 @@
-import { Navigation } from "@angular/router";
 import { Button } from "../models/core/button";
 import { ImageControl } from "../models/core/image-control";
 import { StaticLabelControl } from "../models/core/static-label-control";
@@ -6,11 +5,12 @@ import { InputControl } from "../models/core/input-control";
 import { ExtendInputControl } from "../models/core/extend-input-control";
 import { CheckboxControl } from "../models/core/checkbox-control";
 import { DropdownListControl } from "../models/core/dropdown-list-control";
-import { Header } from "./header";
 import { ForgotPassword } from "./forgot-password";
 import { DynamicLabelControl } from "../models/core/dynamic-label-control";
 import { Link } from "../models/core/link";
+import { Header } from './header';
 export class LoginModel {
+    header= new Header();
     loginCTA = new Button("LABELS.SEARCH");
     openEmail = new ImageControl('../assets/images/email-icon.svg','','','','','email-icon');
     supportCall = new ImageControl('../assets/images/PhoneCall-icon.svg','','','','','support-call');
@@ -34,8 +34,6 @@ export class LoginModel {
     youtubeSymbol: ImageControl;
     xSymbol:ImageControl;
     linkedinSymbol: ImageControl;
-    header:Header;
-    navigation: Navigation;
     authrizedRoutes: string [] =[];
     constructor(){
         this.sidelogo= new ImageControl('../assets/images/SKYDECOR-Logo-latest.svg');

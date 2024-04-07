@@ -9,7 +9,6 @@ export class AppConfigService {
 TOKEN ='';
 LOGIN_USER = '';
 LOGIN_URL ='';
-URLS:any = {};
 
 constructor(private httpClient: HttpClient, private router: ActivatedRoute) { }
 
@@ -29,10 +28,8 @@ private initAppConfig(appConfig: any):void{
   const hostName = window.location.host;
   if(appConfig && appConfig.environments && appConfig.environments[hostName]){
     this.LOGIN_URL = appConfig.environments[hostName].loginUrl;
-    this.URLS = appConfig.environments[hostName].urls;
   } else {
     this.LOGIN_URL = appConfig.environments.default.loginUrl;
-    this.URLS = appConfig.environments.default.loginUrl;
   }
   // if(appConfig.mock === true){
   //   this.URLS = appConfig.mockUrls;

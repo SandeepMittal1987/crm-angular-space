@@ -28,9 +28,11 @@ export * from './lib/core/dynamic-label/dynamic-label.component';
 export * from './lib/core/link/link.component';
 
 export * from './lib/models/widgets/login-page/login-page.component';
-// export * from './lib/models/widgets/password/password.component';
 export * from './lib/models/widgets/forgot-password/forgot-password.component';
 export * from './lib/models/widgets/header/header.component';
+
+export * from './lib/models/pages/layout-page/layout-page.component';
+
 
 export * from './lib/models/Constants/app-constants';
 export * from './lib/models/Constants/http-status-code.const';
@@ -48,7 +50,9 @@ export * from './lib/models/core/link';
 export * from './lib/widgets/header';
 export * from './lib/widgets/forgot-password';
 export * from './lib/widgets/login.model';
-// export * from './lib/widgets/password-model';
+export * from './lib/widgets/layout';
+
 
 export * from './lib/models/model/image-data-model';
 export * from './lib/models/model/login-model';
+ 

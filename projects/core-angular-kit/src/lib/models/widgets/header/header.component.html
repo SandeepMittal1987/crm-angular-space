@@ -1,4 +1,17 @@
-<mat-toolbar color="primary" fxFlexFill>
+<div class="topnav">
+  <div class="Header row">
+    <div class="col-6 header-support">
+      <lib-image [lib]="lib.openEmail"></lib-image>
+      <lib-static-label [lib]="lib.supportEmail"></lib-static-label>
+      <lib-image class="call" [lib]="lib.supportCall"></lib-image>
+      <lib-static-label [lib]="lib.supportMobile"></lib-static-label>
+    </div>
+  </div>
+</div>
+<div class="topnav-profile" *ngIf="lib.isLoggedIn">
+  <lib-image [lib]="lib.companyLogo"></lib-image>
+</div>
+<!-- <mat-toolbar color="primary" fxFlexFill>
   <mat-toolbar-row fxLayoutAlign="space-between center" style="padding-left: 0px; padding-right: 0px;">
     <div style="padding-left: 0px !important; padding-right: 0px !important;">
       <button mat-button (click)="onMenuClick($event)"
@@ -27,4 +40,4 @@
       </button>
     </div>
   </mat-toolbar-row>
-</mat-toolbar>
+</mat-toolbar> -->
