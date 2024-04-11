@@ -63,9 +63,17 @@
     }
 }
 .topnav-profile{
+    display: flex;
+    justify-content: space-between;
     padding: 1.5%;
     border-bottom: 1px solid $color-primary-black-OP80;
     box-shadow: 0 4px 8px 0 rgba(0, 1, 1, 0.2), 0 2px 6px 0 rgb(0, 1, 0);
+    .avatar{
+        height: 70px;
+        width: 70px;
+        border: 2px solid $color-primary-black-OP20;
+        border-radius: 50%;
+    }
 }
 .main-page{
     height: 100%;

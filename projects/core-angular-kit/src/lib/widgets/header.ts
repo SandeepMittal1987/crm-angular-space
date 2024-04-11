@@ -24,7 +24,7 @@ export class Header implements Icore {
   supportEmail = new StaticLabelControl('supportEmail','LABELS.SUPPORTEMAIL', 'email');
   supportMobile = new StaticLabelControl('supportMobile','LABELS.SUPPORTEMOBILE', 'mobile');
   companyLogo = new ImageControl('../assets/images/horizontal-logo.svg','company-Logo','','','','company-logo');
-  
+  avatarImg = new ImageControl('https://www.w3schools.com/howto/img_avatar.png','avatar','','','','avatar');
   constructor(
     public id: string = 'crmHeader',
     public title: string = 'LABEL.TITLE',

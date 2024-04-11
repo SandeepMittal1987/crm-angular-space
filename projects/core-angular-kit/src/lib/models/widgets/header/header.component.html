@@ -9,7 +9,12 @@
   </div>
 </div>
 <div class="topnav-profile" *ngIf="lib.isLoggedIn">
-  <lib-image [lib]="lib.companyLogo"></lib-image>
+  <div class="company-logo">
+    <lib-image [lib]="lib.companyLogo"></lib-image>
+  </div>
+  <div class="employee-details">
+    <lib-image [lib]="lib.avatarImg"></lib-image>
+  </div>
 </div>
 <!-- <mat-toolbar color="primary" fxFlexFill>
   <mat-toolbar-row fxLayoutAlign="space-between center" style="padding-left: 0px; padding-right: 0px;">
